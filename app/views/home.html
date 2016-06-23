@@ -1,0 +1,25 @@
+<div class="container">
+	<input class="form-control" type="text" ng-model="search" placeholder="Rechercher">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Fonction</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+					<th>Voir</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="author in authors | filter:search">
+					<td>{{author.nom}}</td>
+					<td>{{author.prenom}}</td>
+					<td>{{author.fonction}}</td>
+					<td><button type="button">coucou</button></td>
+					<td><button type="button">coucou</button></td>
+					<td><a ng-href="#/author/{{author.id_auteur}}">coucou</a></td>
+				</tr>
+			</tbody>
+		</table>
+</div>
