@@ -10,7 +10,7 @@
 <body>
 	<div ng-app="myAuthorAlbum">
 		<div class="container lead">
-			<h1>Ma liste d'auteurs</h1>
+			<h1>SUPERLISTE</h1>
 		</div>
 		<div ng-view></div>
 	</div>
@@ -18,6 +18,7 @@
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="app/config/app.js"></script>
 	<script src="app/config/router.js"></script>
-	<script src="app/src/controllers/controllers.js"></script>
+	<script src="app/src/controllers/authorCtrl.js"></script>
+	<script src="app/src/controllers/mainCtrl.js"></script>
 </body>
 </html>

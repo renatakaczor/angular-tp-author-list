@@ -1,5 +1,15 @@
 <div class="container">
-	<input class="form-control" type="text" ng-model="search" placeholder="Rechercher">
+	<div class="form-inline">
+		<input class="form-control" type="text" ng-model="search" placeholder="Rechercher">	
+		<button ng-click="show()" class="btn btn-primary" style="float: right;">Ajouter un auteur</button>
+		<form class="form-group" ng-show="modifyForm">
+			<input class="form-control" type="text" placeholder="Nom" ng-model="addName">
+			<input class="form-control" type="text" placeholder="Prénom" ng-model="addFirstName">
+			<input class="form-control" type="text" placeholder="Fonction" ng-model="addTitle">
+			<button class="btn btn-success" ng-click="submitAdd()">Soumettre</button>
+			<button ng-click="hide()" class="btn btn-danger">Annuler</button>
+		</form>
+	</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -16,8 +26,8 @@
 					<td>{{author.nom}}</td>
 					<td>{{author.prenom}}</td>
 					<td>{{author.fonction}}</td>
-					<td><button type="button">coucou</button></td>
-					<td><button type="button">coucou</button></td>
+					<td><a >coucou</a></td>
+					<td><a ng-click="delete()">coucou</a></td>
 					<td><a ng-href="#/author/{{author.id_auteur}}">coucou</a></td>
 				</tr>
 			</tbody>
