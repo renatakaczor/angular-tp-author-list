@@ -1,13 +1,13 @@
 <div class="container">
 	<div class="form-inline">
 		<input class="form-control" type="text" ng-model="search" placeholder="Rechercher">	
-		<button ng-click="show()" class="btn btn-primary" style="float: right;">Ajouter un auteur</button>
-		<form class="form-group" ng-show="modifyForm">
+		<button ng-click="showAdd()" class="btn btn-primary" style="float: right;">Ajouter un auteur</button>
+		<form class="form-group" ng-show="addForm">
 			<input class="form-control" type="text" placeholder="Nom" ng-model="addName">
 			<input class="form-control" type="text" placeholder="Prénom" ng-model="addFirstName">
 			<input class="form-control" type="text" placeholder="Fonction" ng-model="addTitle">
 			<button class="btn btn-success" ng-click="submitAdd()">Soumettre</button>
-			<button ng-click="hide()" class="btn btn-danger">Annuler</button>
+			<button ng-click="hideAdd()" class="btn btn-danger">Annuler</button>
 		</form>
 	</div>
 		<table class="table table-striped">
@@ -23,11 +23,11 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="author in authors | filter:search">
-					<td>{{author.nom}}</td>
-					<td>{{author.prenom}}</td>
-					<td>{{author.fonction}}</td>
-					<td><a >coucou</a></td>
-					<td><a ng-click="delete()">coucou</a></td>
+					<td><div>{{author.nom}}</div><input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateName"></td>
+					<td><div>{{author.prenom}}<input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateFirstName"></div></td>
+					<td><div>{{author.fonction}}<input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateTitle"></div></td>
+					<td><div><a ng-click="showUpdate(author)">coucou</a><button ng-show="updateForm" class="btn btn-success" ng-click="submitAdd()">Soumettre</button></div></td>
+					<td><div><a ng-click="delete(author)">coucou</a><button ng-show="updateForm" class="btn btn-danger" ng-click="submitAdd()">Annuler</button></div></td>
 					<td><a ng-href="#/author/{{author.id_auteur}}">coucou</a></td>
 				</tr>
 			</tbody>

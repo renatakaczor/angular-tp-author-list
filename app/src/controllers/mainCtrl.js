@@ -5,15 +5,14 @@ app.controller('mainCtrl', function($scope, $http){
 	}).then(function(result) {
 		$scope.authors = result.data;
 	})
-
-	$scope.hide = function(){
-		$scope.modifyForm = false;
+	$scope.hideAdd = function(){
+		$scope.addForm = false;
 		$scope.addName = "";
 		$scope.addFirstName = "";
 		$scope.addTitle = "";
 	}
-	$scope.show = function(){
-		$scope.modifyForm = true;
+	$scope.showAdd = function(){
+		$scope.addForm = true;
 	}
 	$scope.submitAdd = function(){
 		$http.get('app/resources/serveur.php', 
@@ -23,17 +22,37 @@ app.controller('mainCtrl', function($scope, $http){
 			$scope.addName = "";
 			$scope.addFirstName = "";
 			$scope.addTitle = "";
-			$scope.hide();
-			alert("Ajout effectué");
+			$scope.hideAdd();
+			$http.get('app/resources/serveur.php', 
+			{
+				params: {method: 'getAuteurs'}
+			}).then(function(result) {
+				$scope.authors = result.data;
+			})
 		})
 	}
-	$scope.delete = function(){
-		console.log($scope);
+	$scope.hideUpdate = function(){
+		$scope.updateForm = false;
+		$scope.updateName = "";
+		$scope.updateFirstName = "";
+		$scope.updateTitle = "";
+	}
+	$scope.showUpdate = function(author){
+		$scope.updateForm = true;
+
+	}
+	$scope.delete = function(author){
+		var delUser = author.id_auteur;
 		$http.get('app/resources/serveur.php', 
 		{
-			params: {method: 'deleteAuteur', id_auteur:$scope.id_auteur}
+			params: {method: 'deleteAuteur', id_auteur:delUser}
 		}).then(function(result) {
-			console.log(result.data);
+			$http.get('app/resources/serveur.php', 
+			{
+				params: {method: 'getAuteurs'}
+			}).then(function(result) {
+				$scope.authors = result.data;
+			})
 		})
 	}
 })
