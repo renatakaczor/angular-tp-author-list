@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Authors Album</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="app/src/style/style.css">
 </head>
 <body>
 	<div ng-app="myAuthorAlbum">

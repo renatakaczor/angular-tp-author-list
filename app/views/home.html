@@ -26,7 +26,7 @@
 					<td><div>{{author.nom}}</div><input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateName"></td>
 					<td><div>{{author.prenom}}<input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateFirstName"></div></td>
 					<td><div>{{author.fonction}}<input ng-show="updateForm" class="form-control" type="text" placeholder="Nom" ng-model="updateTitle"></div></td>
-					<td><div><a class="btn btn-warning" ng-click="showUpdate(author)">Modifier</a><br><button ng-show="updateForm" class="btn btn-success" ng-click="">Soumettre</button></div></td>
+					<td><div><a class="btn btn-warning" ng-click="showUpdate(author)">Modifier</a><br><button ng-show="updateForm" class="btn btn-success" ng-click="submitUpdate()">Soumettre</button></div></td>
 					<td><div><a class="btn btn-danger" ng-click="delete(author)">Supprimer</a><br><button ng-show="updateForm" class="btn btn-danger" ng-click="hideUpdate()">Annuler</button></div></td>
 					<td><a class="btn btn-success" ng-href="#/author/{{author.id_auteur}}">Détail</a></td>
 				</tr>
