@@ -32,13 +32,13 @@ app.controller('mainCtrl', function($scope, $http){
 		})
 	}
 	$scope.hideUpdate = function(){
-		$scope.updateForm = false;
-		$scope.updateName = "";
-		$scope.updateFirstName = "";
-		$scope.updateTitle = "";
+		this.updateForm = false;
+		this.updateName = "";
+		this.updateFirstName = "";
+		this.updateTitle = "";
 	}
 	$scope.showUpdate = function(author){
-		$scope.updateForm = true;
+		this.updateForm = true;
 
 	}
 	$scope.delete = function(author){
