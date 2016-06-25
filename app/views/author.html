@@ -1,7 +1,21 @@
 <div class="container">
-	<h2>{{author.prenom}} {{author.nom}}</h2>
-	<h3>{{author.fonction}}</h3>
-	<p>
-		<a href="#/">Retour à la liste d'auteurs</a>
-	</p>
+	<div class="img"></div>
+	<div>
+		<h2>{{author.prenom}} {{author.nom}}</h2>
+		<h3>{{author.fonction}}</h3>
+		<div class="authorButtons">
+			<div class="form-inline">
+				<button class="btn btn-warning" ng-click="showUpdateAuthor()">Modfier</button>
+				<button class="btn btn-danger" ng-click="deleteAuthor()">Supprimer</button>
+				<a style="margin-top:3px" class="btn btn-primary" href="#/">Retour à la liste d'auteurs</a>
+			</div>
+		</div>
+		<form class="form-group" style="margin-top:7px" ng-show="updateAuthor">
+			<input type="text" placeholder="Nom" ng-model="updateAuthorName">
+			<input type="text" placeholder="Prénom" ng-model="updateAuthorFirstName">
+			<input type="text" placeholder="Fonction" ng-model="updateAuthorTitle">
+			<button class="btn btn-success" ng-click="submitUpdateAuthor()">Soumettre</button>
+			<button class="btn btn-danger" ng-click="hideUpdateAuthor()">Annuler</button>
+		</form>
+	</div>	
 </div>

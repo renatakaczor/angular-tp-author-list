@@ -1,3 +1,12 @@
-button {
+button{
 	margin-top: 3px;
+}
+
+.img{
+	width: 300px;
+	height: 400px;
+	background-color: #E39666;
+	border: solid 2px #66B3E3;
+	border-radius: 25px;
+	margin: auto;
 }
